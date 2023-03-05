@@ -13,23 +13,13 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "USER")
-public class User {
+@Table(name = "CATEGORY")
+public class Category {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
-    private String username;
+    private int categoryId;
     private String name;
-    private String email;
-    private String password;
-
-    public User(String username, String name, String email, String password) {
-        this.username = username;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
 }

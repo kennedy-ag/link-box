@@ -1,5 +1,7 @@
 package com.linkbox.linkbox.models;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,23 +15,16 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "USER")
-public class User {
+@Table(name = "HST_LINK_CATEGORY")
+public class HstLinkCategory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
-    private String username;
-    private String name;
-    private String email;
-    private String password;
-
-    public User(String username, String name, String email, String password) {
-        this.username = username;
-        this.name = name;
-        this.email = email;
-        this.password = password;
-    }
+    private int historyId;
+    private int linkCategoryId;
+    private String operationType;
+    private String operationText;
+    Timestamp timestamp;
 }
